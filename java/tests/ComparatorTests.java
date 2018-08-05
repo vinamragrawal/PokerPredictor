@@ -27,6 +27,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -48,6 +50,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
@@ -71,6 +75,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ace));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -94,6 +100,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ace));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
@@ -136,6 +144,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.OnePair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -157,6 +167,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.OnePair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.OnePair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -178,6 +190,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.OnePair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.OnePair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
@@ -199,6 +213,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.OnePair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -220,6 +236,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -243,6 +261,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1, sequence2), 1);
     }
 
@@ -264,6 +284,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
@@ -285,6 +307,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -306,6 +330,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Ten));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -327,6 +353,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.ThreeOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
@@ -348,6 +376,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.ThreeOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -373,6 +403,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -394,6 +426,8 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.OnePair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
@@ -415,11 +449,13 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
     @Test
-    public void SequenceGeneralTest(){
+    public void StraightGeneralTest(){
         ArrayList<Card> array1 = new ArrayList<>();
         array1.add(new Card(Suit.Club, Value.Nine));
         array1.add(new Card(Suit.Diamond, Value.Six));
@@ -438,13 +474,16 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
     @Test
-    public void SequenceAceTest(){
+    public void SameStraightTest(){
         ArrayList<Card> array1 = new ArrayList<>();
-        array1.add(new Card(Suit.Club, Value.Ace));
+        array1.add(new Card(Suit.Club, Value.Nine));
+        array1.add(new Card(Suit.Diamond, Value.Six));
         array1.add(new Card(Suit.Spade, Value.Ten));
         array1.add(new Card(Suit.Club, Value.Jack));
         array1.add(new Card(Suit.Diamond, Value.King));
@@ -452,18 +491,44 @@ public class ComparatorTests {
         Sequence sequence1 = new Sequence(array1);
 
         ArrayList<Card> array2 = new ArrayList<>();
-        array2.add(new Card(Suit.Club, Value.Nine));
-        array2.add(new Card(Suit.Spade, Value.Ten));
-        array2.add(new Card(Suit.Club, Value.Jack));
-        array2.add(new Card(Suit.Diamond, Value.King));
-        array2.add(new Card(Suit.Diamond, Value.Queen));
+        array2.add(new Card(Suit.Club, Value.Queen));
+        array2.add(new Card(Suit.Club, Value.King));
+        array2.add(new Card(Suit.Diamond, Value.Eight));
+        array2.add(new Card(Suit.Heart, Value.Nine));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),0);
+    }
+
+    @Test
+    public void StraightAceTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Club, Value.Ace));
+        array1.add(new Card(Suit.Spade, Value.Two));
+        array1.add(new Card(Suit.Club, Value.Three));
+        array1.add(new Card(Suit.Diamond, Value.Four));
+        array1.add(new Card(Suit.Diamond, Value.Five));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Two));
+        array2.add(new Card(Suit.Spade, Value.Three));
+        array2.add(new Card(Suit.Club, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Diamond, Value.Six));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
     @Test
-    public void SequenceThreeOfAKindTest(){
+    public void StraightThreeOfAKindTest(){
         ArrayList<Card> array1 = new ArrayList<>();
         array1.add(new Card(Suit.Club, Value.Seven));
         array1.add(new Card(Suit.Diamond, Value.Six));
@@ -480,11 +545,13 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.ThreeOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
     @Test
-    public void SequenceTwoPairTest(){
+    public void StraightTwoPairTest(){
         ArrayList<Card> array1 = new ArrayList<>();
         array1.add(new Card(Suit.Club, Value.Seven));
         array1.add(new Card(Suit.Diamond, Value.King));
@@ -501,11 +568,13 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
     }
 
     @Test
-    public void SequenceHighCardTest(){
+    public void StraightHighCardTest(){
         ArrayList<Card> array1 = new ArrayList<>();
         array1.add(new Card(Suit.Club, Value.Seven));
         array1.add(new Card(Suit.Diamond, Value.Ace));
@@ -522,7 +591,134 @@ public class ComparatorTests {
         array2.add(new Card(Suit.Diamond, Value.Jack));
         Sequence sequence2 = new Sequence(array2);
 
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
+    }
+
+    @Test
+    public void FlushGeneralTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.Two));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Queen));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Eight));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FlushStraightTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.Two));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Queen));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Queen));
+        array2.add(new Card(Suit.Spade, Value.Ace));
+        array2.add(new Card(Suit.Spade, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FlushThreeOfAKindTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.Two));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Queen));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.Queen));
+        array2.add(new Card(Suit.Spade, Value.Ace));
+        array2.add(new Card(Suit.Spade, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FlushTwoPairTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.Two));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Queen));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.Queen));
+        array2.add(new Card(Suit.Spade, Value.Ace));
+        array2.add(new Card(Suit.Spade, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FlushHighCardTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.Two));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Queen));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Jack));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Spade, Value.Seven));
+        array2.add(new Card(Suit.Spade, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
 }
