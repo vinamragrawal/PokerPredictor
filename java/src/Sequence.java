@@ -42,7 +42,7 @@ class Sequence {
 
     private boolean isPair(){
         for (int aValueArray : valueArray) {
-            if (aValueArray > 1)
+            if (aValueArray == 2)
                 return true;
         }
         return false;
@@ -51,7 +51,7 @@ class Sequence {
     private boolean isTwoPair(){
         boolean firstPair = false;
         for (int aValueArray : valueArray) {
-            if (aValueArray > 1) {
+            if (aValueArray == 2) {
                 if (!firstPair)
                     firstPair = true;
                 else return true;
@@ -61,10 +61,23 @@ class Sequence {
     }
 
     private boolean isThreeOfAKind(){
+        for (int aValueArray : valueArray) {
+            if (aValueArray == 3)
+                return true;
+        }
         return false;
     }
 
     private boolean isStraight(){
+        int sequenceLenght = 0;
+        for (int aValueArray : valueArray) {
+            if (aValueArray == 1)
+                sequenceLenght++;
+            else sequenceLenght = 0;
+
+            if (sequenceLenght == Comparator.POKER_MAX_CARD_SEQUENCE)
+                return true;
+        }
         return false;
     }
 
@@ -130,8 +143,27 @@ class Sequence {
             case Flush:
                 break;
             case Straight:
+                int sequenceLenght = 0;
+                int minCardValue = -1;
+                for (int aValueArray : valueArray) {
+                    if (aValueArray == 1)
+                        sequenceLenght++;
+                    else sequenceLenght = 0;
+
+                    if (sequenceLenght == Comparator.POKER_MAX_CARD_SEQUENCE)
+                        minCardValue = aValueArray;
+                }
+                for (int i = minCardValue + Comparator.POKER_MAX_CARD_SEQUENCE - 1; i >= minCardValue; i--){
+                    for (int j = 0; j < cards.size(); j++)
+                        if (j == i)
+                            winningOrderCards.add(cards.get(i));
+                }
                 break;
             case ThreeOfAKind:
+                for (Card card : cards) {
+                    if (valueArray[card.getValue().ordinal()] == 3)
+                        winningOrderCards.add(card);
+                }
                 break;
             case TwoPair:
                 for (int i = valueArray.length - 1; i >= 0; i--){

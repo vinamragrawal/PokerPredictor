@@ -6,9 +6,14 @@ import java.util.List;
  */
 
 class Comparator {
-    private static final int POKER_MAX_CARD_SEQUENCE = 5;
+    static final int POKER_MAX_CARD_SEQUENCE = 5;
 
     static int compareSequence(Sequence sequence1, Sequence sequence2){
+        if (sequence1.getCards().size() != sequence2.getCards().size()) {
+            System.out.println("Error InValid sequence count");
+            return 0;
+        }
+
         if (sequence1.getWinningOrder().ordinal() > sequence2.getWinningOrder().ordinal())
             return 1;
         else if (sequence1.getWinningOrder().ordinal() < sequence2.getWinningOrder().ordinal())
