@@ -721,4 +721,201 @@ public class ComparatorTests {
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
 
+    @Test
+    public void FullHouseGeneralTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Spade, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Heart, Value.Three));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FullHouseFlushTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.Eight));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.King));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void HigherFullHouseTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Spade, Value.Three));
+        array2.add(new Card(Suit.Heart, Value.Ten));
+        array2.add(new Card(Suit.Heart, Value.Three));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FullHouseThreeOfAKindTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Spade, Value.King));
+        array2.add(new Card(Suit.Heart, Value.Ace));
+        array2.add(new Card(Suit.Heart, Value.Ace));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.ThreeOfAKind);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FullHouseTwoPairTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Spade, Value.Ten));
+        array2.add(new Card(Suit.Heart, Value.Ace));
+        array2.add(new Card(Suit.Heart, Value.Ace));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.TwoPair);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FullHouseHighCardTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Spade, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.Queen));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.HighCard);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FourOfAKindGeneralTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.King));
+        array1.add(new Card(Suit.Club, Value.King));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Queen));
+        array2.add(new Card(Suit.Diamond, Value.Queen));
+        array2.add(new Card(Suit.Spade, Value.Queen));
+        array2.add(new Card(Suit.Heart, Value.Queen));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FourOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.FourOfAKind);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void FourOfAKindFullHouseTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Club, Value.Seven));
+        array1.add(new Card(Suit.Heart, Value.Seven));
+        array1.add(new Card(Suit.Diamond, Value.Seven));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Club, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Spade, Value.Queen));
+        array2.add(new Card(Suit.Heart, Value.Queen));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FourOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
 }

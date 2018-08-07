@@ -96,10 +96,23 @@ class Sequence {
     }
 
     private boolean isFullHouse(){
+        if (!isThreeOfAKind())
+            return false;
+        int cards = 0;
+        for (int i = valueArray.length - 1; i >= 0; i--) {
+            if (valueArray[i] > 1)
+                cards += valueArray[i];
+            if (cards >= Comparator.POKER_MAX_CARD_SEQUENCE)
+                return true;
+        }
         return false;
     }
 
     private boolean isFourOfAKind(){
+        for (int aValueArray : valueArray) {
+            if (aValueArray == 4)
+                return true;
+        }
         return false;
     }
 
@@ -159,9 +172,26 @@ class Sequence {
                 break;
 
             case FourOfAKind:
+                for (Card card : cards) {
+                    if (valueArray[card.getValue().ordinal()] == 4)
+                        winningOrderCards.add(card);
+                }
                 break;
 
             case FullHouse:
+                for (int i = valueArray.length - 1; i >= 0; i--)
+                    if (valueArray[i] == 3)
+                        for (Card card : cards)
+                            if (card.getValue().ordinal() == i)
+                                winningOrderCards.add(card);
+
+                for (int i = valueArray.length - 1; i >= 0; i--){
+                    if (valueArray[i] > 1)
+                        for (Card card : cards) {
+                            if (card.getValue().ordinal() == i && card.getValue().ordinal() != winningOrderCards.get(0).getValue().ordinal())
+                                winningOrderCards.add(card);
+                        }
+                }
                 break;
 
             case Flush:
