@@ -22,11 +22,27 @@ public class Card {
         this.value = value;
     }
 
-    public Suit getSuit() {
+    Suit getSuit() {
         return suit;
     }
 
     Value getValue() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+
+        if (!Card.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+
+        final Card other = (Card) obj;
+        if (this.suit.ordinal() != other.suit.ordinal())
+            return false;
+
+        return this.value.ordinal() == other.value.ordinal();
     }
 }

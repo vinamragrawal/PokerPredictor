@@ -918,4 +918,180 @@ public class ComparatorTests {
         assertEquals(sequence2.getWinningOrder(), WinningOrder.FullHouse);
         assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
     }
+
+    @Test
+    public void StraightFlushGeneralTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Spade, Value.Ace));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Queen));
+        array1.add(new Card(Suit.Spade, Value.Jack));
+        array1.add(new Card(Suit.Spade, Value.Ten));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Nine));
+        array2.add(new Card(Suit.Diamond, Value.Eight));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Six));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void StraightFlushGeneralTest2(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Spade, Value.Ace));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Queen));
+        array1.add(new Card(Suit.Spade, Value.Jack));
+        array1.add(new Card(Suit.Spade, Value.Ten));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ten));
+        array2.add(new Card(Suit.Diamond, Value.Nine));
+        array2.add(new Card(Suit.Diamond, Value.Eight));
+        array2.add(new Card(Suit.Diamond, Value.Seven));
+        array2.add(new Card(Suit.Diamond, Value.Six));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void StraightFlushAceTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Spade, Value.Ace));
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Queen));
+        array1.add(new Card(Suit.Spade, Value.Jack));
+        array1.add(new Card(Suit.Spade, Value.Ten));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),1);
+    }
+
+    @Test
+    public void StraightFlushFourOfAKindTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Heart, Value.King));
+        array1.add(new Card(Suit.Club, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Jack));
+        array1.add(new Card(Suit.Spade, Value.Ten));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FourOfAKind);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
+    }
+
+    @Test
+    public void StraightFlushFullHouseTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Spade, Value.King));
+        array1.add(new Card(Suit.Heart, Value.King));
+        array1.add(new Card(Suit.Club, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Jack));
+        array1.add(new Card(Suit.Club, Value.Jack));
+        array1.add(new Card(Suit.Diamond, Value.Five));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.FullHouse);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
+    }
+
+    @Test
+    public void StraightFlushFlushTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Club, Value.Ace));
+        array1.add(new Card(Suit.Club, Value.Two));
+        array1.add(new Card(Suit.Club, Value.Three));
+        array1.add(new Card(Suit.Club, Value.Ten));
+        array1.add(new Card(Suit.Club, Value.Jack));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Flush);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
+    }
+
+    @Test
+    public void StraightFlushStraightTest(){
+        ArrayList<Card> array1 = new ArrayList<>();
+        array1.add(new Card(Suit.Club, Value.Ace));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        array1.add(new Card(Suit.Spade, Value.Queen));
+        array1.add(new Card(Suit.Spade, Value.Ten));
+        array1.add(new Card(Suit.Club, Value.Jack));
+        array1.add(new Card(Suit.Diamond, Value.King));
+        Sequence sequence1 = new Sequence(array1);
+
+        ArrayList<Card> array2 = new ArrayList<>();
+        array2.add(new Card(Suit.Diamond, Value.Ace));
+        array2.add(new Card(Suit.Diamond, Value.Two));
+        array2.add(new Card(Suit.Diamond, Value.Three));
+        array2.add(new Card(Suit.Diamond, Value.Four));
+        array2.add(new Card(Suit.Diamond, Value.Five));
+        array2.add(new Card(Suit.Heart, Value.King));
+        Sequence sequence2 = new Sequence(array2);
+
+        assertEquals(sequence1.getWinningOrder(), WinningOrder.Straight);
+        assertEquals(sequence2.getWinningOrder(), WinningOrder.StraightFlush);
+        assertEquals(Comparator.compareSequence(sequence1,sequence2),-1);
+    }
+
 }
